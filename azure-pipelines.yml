@@ -13,9 +13,9 @@ steps:
   displayName: 'Run a one-line script'
 - task: NuGetCommand@2
   inputs:
-    command: 'restore'
-    restoreSolution: '**/*.sln'
-    feedsToUse: 'select'
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'internal'
 
 # - task: NuGetCommand@2
 #   inputs:
