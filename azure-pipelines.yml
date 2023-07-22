@@ -8,9 +8,6 @@ resources:
      type: github
      name: SruthiKorembathe/pipelines-java
      endpoint: github.com_SruthiKorembathe
-
-
-
 trigger:
 - none
 
