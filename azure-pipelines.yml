@@ -3,15 +3,17 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- none
+# trigger:
+# - none
 
-pool: default
-
-steps:
-- template: include-npm-steps.yml
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+# steps: 
+jobs:
+- job: Linux
+  pool: default
+  steps:
+    - template: azure-pipelines.yml
+    - script: echo Hello, world!
+      displayName: 'Run a one-line script'
 
 
 # - task: NuGetCommand@2
@@ -19,16 +21,16 @@ steps:
 #     command: 'push'
 #     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
 #     nuGetFeedType: 'internal'
-- task: CopyFiles@2
-  inputs:
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-# - task: NuGetCommand@2
+# - task: CopyFiles@2
 #   inputs:
-#     command: pack
-#     packagesToPack: '**/*.csproj'
-#     packDestination: '$(Build.ArtifactStagingDirectory)'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
+#     Contents: '**'
+#     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+# # - task: NuGetCommand@2
+# #   inputs:
+# #     command: pack
+# #     packagesToPack: '**/*.csproj'
+# #     packDestination: '$(Build.ArtifactStagingDirectory)'
+# - task: PublishBuildArtifacts@1
+#   inputs:
+#     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+#     ArtifactName: 'drop'
