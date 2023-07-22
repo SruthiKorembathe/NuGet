@@ -1,37 +1,18 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-# trigger:
-# - none
-
-# steps: 
-jobs:
-- job: Linux
-  pool: default
-  steps:
-    - template: templates/let-try.yml
-
-
-    
- 
-
-# - task: NuGetCommand@2
-#   inputs:
-#     command: 'push'
-#     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
-#     nuGetFeedType: 'internal'
-# - task: CopyFiles@2
-#   inputs:
-#     Contents: '**'
-#     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-# # - task: NuGetCommand@2
-# #   inputs:
-# #     command: pack
-# #     packagesToPack: '**/*.csproj'
-# #     packDestination: '$(Build.ArtifactStagingDirectory)'
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-#     ArtifactName: 'drop'
+pool: default
+stages:
+    - stage: Firststage
+      jobs:
+      - job: FirstJob
+        steps:
+        - script: echo first job
+      - job: SecondJob
+        steps:
+        - script: echo second job
+    - stage: Secondstage
+      jobs:
+          - job: SecondJob
+            steps:
+                - script: echo hey reached the final
+          - job: SecondJob
+            steps:
+             - script: echo second job
