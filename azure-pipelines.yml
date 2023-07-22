@@ -8,6 +8,7 @@ resources:
      type: github
      name: SruthiKorembathe/pipelines-java
      endpoint: github.com_SruthiKorembathe
+     ref: pipelines-java/diffrepo
 trigger:
 - none
 
