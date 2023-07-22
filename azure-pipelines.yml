@@ -9,7 +9,7 @@ trigger:
 pool: default
 
 steps:
-- template: Firstpipeline.yml
+- template: include-npm-steps.yml
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
