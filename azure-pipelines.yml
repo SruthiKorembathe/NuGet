@@ -11,7 +11,8 @@ jobs:
 - job: Linux
   pool: default
   steps:
-    - template: template/samplet.yml
+    - template: 
+
 
     
  
