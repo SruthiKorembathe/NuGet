@@ -11,10 +11,9 @@ jobs:
 - job: Linux
   pool: default
   steps:
-    - template: azure-pipelines.yml
-    - script: echo Hello, world!
-      displayName: 'Run a one-line script'
-
+    - template: template/samplet.yml
+    
+ 
 
 # - task: NuGetCommand@2
 #   inputs:
