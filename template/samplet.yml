@@ -1,4 +1,0 @@
-# File: templates/include-npm-steps.yml
-pool: default
-steps:
-- script: echo smaple template yaml
