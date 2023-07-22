@@ -11,7 +11,7 @@ jobs:
 - job: Linux
   pool: default
   steps:
-    - template: 
+    - template: templates/let-try.yml
 
 
     
