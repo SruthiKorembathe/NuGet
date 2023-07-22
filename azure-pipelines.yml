@@ -23,5 +23,7 @@ stages:
        command: 'push'
        packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
        nuGetFeedType: 'internal'
+    - checkout: self
+    - checkout: pipelines-java
     - template: templates/stage-job-step.yml
     
